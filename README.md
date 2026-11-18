@@ -15,3 +15,6 @@ Application: Bottle packaging
 | `Milestone 01/Script/URDF` | URDF export and meshes |
 | `Milestone 01/Script/STL` | STL files (only if the design is modified) |
 | `Milestone 01/Media` | `Video1.mp4` (Simscape + MATLAB), `Video2.mp4` (Gazebo + Python) |
+| `Milestone 03/` | Inverse position kinematics (Newton-Raphson), forward and inverse velocity kinematics |
+| `Milestone 03/Script/Python` | `kinematics_red.py`, `fk_node_red.py`, `ik_node_red.py`, `velocity_node_red.py`, `robot_io_red.py`, `params_red.yaml` (ROS 2 Jazzy) |
+| `Milestone 03/Script/URDF` | `lrmate200id_description` package: URDF, meshes, ros2_control, Gazebo Harmonic launch |

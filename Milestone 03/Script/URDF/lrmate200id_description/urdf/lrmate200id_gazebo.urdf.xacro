@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<robot name="lrmate200id" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <material name="yellow"><color rgba="0.96 0.76 0.13 1"/></material>
+  <material name="black"><color rgba="0.15 0.15 0.15 1"/></material>
+  <link name="base_link">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/base_link.stl"/></geometry><material name="black"/></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/base_link.stl"/></geometry></collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="2.0"/><inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/></inertial>
+  </link>
+  <link name="link_1">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_1.stl"/></geometry><material name="yellow"/></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_1.stl"/></geometry></collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="2.0"/><inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/></inertial>
+  </link>
+  <link name="link_2">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_2.stl"/></geometry><material name="yellow"/></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_2.stl"/></geometry></collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="2.0"/><inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/></inertial>
+  </link>
+  <link name="link_3">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_3.stl"/></geometry><material name="yellow"/></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_3.stl"/></geometry></collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="2.0"/><inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/></inertial>
+  </link>
+  <link name="link_4">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_4.stl"/></geometry><material name="yellow"/></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_4.stl"/></geometry></collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="2.0"/><inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/></inertial>
+  </link>
+  <link name="link_5">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_5.stl"/></geometry><material name="yellow"/></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_5.stl"/></geometry></collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="2.0"/><inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/></inertial>
+  </link>
+  <link name="link_6">
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_6.stl"/></geometry><material name="black"/></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="package://lrmate200id_description/meshes/link_6.stl"/></geometry></collision>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="2.0"/><inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/></inertial>
+  </link>
+  <joint name="joint_1" type="revolute">
+    <origin xyz="0 0 0.330" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="-2.9671" upper="2.9671" velocity="2.0"/>
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <origin xyz="0.050 0 0" rpy="0 0 0"/>
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="-1.7453" upper="2.5307" velocity="2.0"/>
+  </joint>
+  <joint name="joint_3" type="revolute">
+    <origin xyz="0 0 0.330" rpy="0 0 0"/>
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="100" lower="-1.2217" upper="3.5779" velocity="2.0"/>
+  </joint>
+  <joint name="joint_4" type="revolute">
+    <origin xyz="0 0 0.035" rpy="0 0 0"/>
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="100" lower="-3.3161" upper="3.3161" velocity="2.0"/>
+  </joint>
+  <joint name="joint_5" type="revolute">
+    <origin xyz="0.335 0 0" rpy="0 0 0"/>
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="100" lower="-2.1817" upper="2.1817" velocity="2.0"/>
+  </joint>
+  <joint name="joint_6" type="revolute">
+    <origin xyz="0.080 0 0" rpy="0 0 0"/>
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="100" lower="-6.2832" upper="6.2832" velocity="2.0"/>
+  </joint>
+
+  <link name="world"/>
+  <joint name="world_fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware><plugin>gz_ros2_control/GazeboSimSystem</plugin></hardware>
+    <joint name="joint_1">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint_6">
+      <command_interface name="position"/>
+      <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find lrmate200id_description)/config/controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+      <publish_link_pose>true</publish_link_pose>
+      <publish_collision_pose>false</publish_collision_pose>
+      <publish_visual_pose>false</publish_visual_pose>
+      <publish_nested_model_pose>false</publish_nested_model_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg>
+      <static_publisher>false</static_publisher>
+      <update_frequency>100</update_frequency>
+    </plugin>
+  </gazebo>
+</robot>
